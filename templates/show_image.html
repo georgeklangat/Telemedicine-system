@@ -1,0 +1,25 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+    <!----Show image--->
+    <h2 class="text-center">Uploaded Images</h2>
+
+    <div class="container">
+        <div style="display: flex;justify-content: space-between;flex-wrap: wrap" class="team-member">
+            {% for image in images %}
+                <div class="col-md-3 member-img">
+                    <a href="https://georgeslangat.netlify.app/"><img src="{{ image.image.url }}" alt="Uploaded Image"
+                                                                      style="width: 300px;height:400px"
+                                                                      class="img-thumbnail"> <br></a>
+                    <p><strong>Name :</strong>{{ image.title }}</p>
+                    <p><strong>Amount per hour :Ksh </strong>{{ image.price }}</p>
+
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+{% endblock %}

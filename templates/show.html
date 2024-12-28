@@ -1,0 +1,89 @@
+{% extends 'starter-page.html' %}
+{% load static %}
+
+{% block body %}
+    <br>
+    <h2 class="text-center">APPOINTMENTS</h2>
+    <table class="table table-info container">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Datetime</th>
+            <th>Department</th>
+            <th>Doctor</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+
+        {% for x in appointment %}
+            <tr>
+                <td>{{ x.name }}</td>
+                <td>{{ x.email }}</td>
+                <td>{{ x.phone }}</td>
+                <td>{{ x.date }}</td>
+                <td>{{ x.department }}</td>
+                <td>{{ x.doctor }}</td>
+                <td>{{ x.message }}</td>
+                <td>
+                    <a href="/editappointment/{{ x.id }}" class="btn btn-warning">EDIT</a>
+                    <a href="/deleteappointment/{{ x.id }}" class="btn btn-danger">DELETE</a>
+                    <a href="" class="btn btn-success">PAY</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+
+    <h2 class="text-center">PRODUCTS</h2>
+    <table class="table table-info container">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+
+        {% for y in products %}
+            <tr>
+                <td>{{ y.name }}</td>
+                <td>{{ y.price }}</td>
+                <td>{{ y.quantity }}</td>
+                <td>
+                    <a href="/editproduct/{{ y.id }}" class="btn btn-warning">EDIT</a>
+                    <a href="/deleteproduct/{{ y.id }}" class="btn btn-danger">DELETE</a>
+                </td>
+            </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <h2 class="text-center">Contacts</h2>
+    <table class="table table-info container">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+        {% for z in contacts %}
+            <tr>
+                <td>{{ z.name }}</td>
+                <td>{{ z.email }}</td>
+                <td>{{ z.subject }}</td>
+                <td>{{ z.message }}</td>
+                <td>
+                    <a href="/editcontact/{{ z.id }}" class="btn btn-warning">EDIT</a>
+                    <a href="/deletecontact/{{ z.id }}" class="btn btn-danger">DELETE</a>
+                </td>
+
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+{% endblock %}
