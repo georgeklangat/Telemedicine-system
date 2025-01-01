@@ -14,6 +14,7 @@
                                                                       class="img-thumbnail"> <br></a>
                     <p><strong>Name :</strong>{{ image.title }}</p>
                     <p><strong>Amount per hour :Ksh </strong>{{ image.price }}</p>
+                    <a href="{% url 'pay' %}" class="btn btn-outline-success">PAY</a><br>
 
                 </div>
             {% endfor %}

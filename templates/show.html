@@ -28,7 +28,7 @@
                 <td>
                     <a href="/editappointment/{{ x.id }}" class="btn btn-warning">EDIT</a>
                     <a href="/deleteappointment/{{ x.id }}" class="btn btn-danger">DELETE</a>
-                    <a href="" class="btn btn-success">PAY</a>
+                    <a href="{% url 'pay' %}" class="btn btn-success">PAY</a>
                 </td>
             </tr>
         {% endfor %}
