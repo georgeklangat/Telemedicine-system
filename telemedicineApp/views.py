@@ -62,6 +62,7 @@ def appointment(request):
         return render(request, 'appointment.html')
 
 
+
 def show(request):
     allapointments = Appointment.objects.all()
     products = Product.objects.all()

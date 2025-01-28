@@ -31,7 +31,7 @@ class Appointment(models.Model):
     message = models.TextField()
 
     def __str__(self):
-        return self.name
+        return self.email
 
 
 class Contact(models.Model):
